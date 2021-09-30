@@ -1,4 +1,4 @@
-package ru.sber.activities
+package ru.sber.activity
 
 import com.journeyapps.barcodescanner.CaptureActivity
 
