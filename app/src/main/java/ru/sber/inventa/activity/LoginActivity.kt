@@ -1,13 +1,14 @@
-package ru.sber.activity
+package ru.sber.inventa.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import ru.sber.App
 import ru.sber.R
-import ru.sber.service.SecurityService
+import ru.sber.inventa.App
+import ru.sber.inventa.service.SecurityService
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
@@ -23,12 +24,14 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin = findViewById(R.id.btnLogin)
         btnLogin.setOnClickListener {
-            if (securityService.checkUser()){
+            val login = findViewById<EditText>(R.id.editTextLogin).text.toString()
+            val password = findViewById<EditText>(R.id.editTextPassword).text.toString()
+
+            if (securityService.checkUser(login, password)) {
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("key", "value")
                 startActivity(intent)
             } else {
-                Toast.makeText(applicationContext, "Try again, bitch", Toast.LENGTH_SHORT)
+                Toast.makeText(applicationContext, "Please, try again", Toast.LENGTH_SHORT)
                     .show()
             }
 

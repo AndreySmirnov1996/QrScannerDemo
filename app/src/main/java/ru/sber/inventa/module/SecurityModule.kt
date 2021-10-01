@@ -1,8 +1,8 @@
-package ru.sber.module
+package ru.sber.inventa.module
 
 import dagger.Module
 import dagger.Provides
-import ru.sber.service.SecurityService
+import ru.sber.inventa.service.SecurityService
 
 @Module
 class SecurityModule {

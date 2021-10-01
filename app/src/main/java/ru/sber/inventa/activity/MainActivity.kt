@@ -1,4 +1,4 @@
-package ru.sber.activity
+package ru.sber.inventa.activity
 
 import android.content.Intent
 import android.os.Bundle
